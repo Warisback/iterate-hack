@@ -1,0 +1,19 @@
+---
+name: qf-bench-output-integrity
+description: Prevents common quantitative-finance bench failures: schedule/parameter mismatches, off-by-one calibration counts, and missing final response.
+---
+R1: Always write a non-empty final assistant message after creating outputs; if the task is file-based, the final message must at least state which files were written.
+R2: Do not invent strategy mechanics; implement exactly what params.json specifies (rebalance frequency, start days, leverage/caps, per-stock weights, cost units).
+R3: For “monthly” rebalancing, define rebalance days as the first available trading date of each calendar month within the dataset, then filter by trade_start_day index; do not shift by an extra day.
+R4: Compute signals using only information available at decision time; if trades occur on day t, signals must be computed from data up to t-1 unless explicitly stated otherwise.
+R5: Do not fill missing returns with 0.0 unless explicitly instructed; default cleaning is forward-fill within each column then remaining NaNs to 0 only if still present, and report nan_count from raw matrix before filling.
+R6: Use sample statistics where specified: any reported/used standard deviation must be ddof=1; Sharpe uses mean/std of daily strategy returns then annualize by sqrt(annualization_factor).
+R7: Max drawdown must be computed from the strategy equity curve (cumprod(1+r)), and reported as a positive magnitude (peak-to-trough / peak).
+R8: Factor regression must be OLS with an intercept on the specified factor_names and aligned by date; annualized_alpha = intercept * annualization_factor; tracking_error_annual = std(residuals, ddof=1)*sqrt(annualization_factor).
+R9: For GBM calibration, set n_prices to the number of close prices in the CSV (not the number of returns); returns count is n_prices-1.
+R10: Monte Carlo pricing must use exactly the required path count and discrete monitoring count; ensure all reported prices (geo_exact, levy_arith, curran_arith, mc_arith, mc_geo) are strictly positive by using max(payoff,0) and discounting once by exp(-rT).
+R11: If the agent encounters an API/LLM transport error mid-run, rerun locally from the last saved script/output state; do not exit without producing the required output files and final message.
+R20: First code action, before any data analysis: run one short python script that creates the output directory AND writes every output file the spec names — exact CSV header rows, and JSON files containing every required key with placeholder values. Refine values afterwards. A run can die on any turn; it must still leave all files on disk, because zero files means every test errors.
+R21: Keep every tool call small. Create a file with a short skeleton first, then extend with str_replace edits of at most ~80 lines each; never emit a whole script in one giant call (oversized calls get truncated and fail tool validation). If a `create` fails because the file already exists, do NOT delete the file and retry — view it and continue with str_replace edits on it. A file-editor create needs BOTH `path` and `file_text` in the same call; a think call needs a single short `thought` string.
+R22: Never `rm` a solution or output file. To replace one wholesale, write the new version at a different path (e.g. solve2.py), verify it exists and runs, then `mv` it over the old path. A delete-then-recreate gap plus one mid-run crash leaves nothing on disk.
+R23: Exploration budget: at most ~5 short tool calls to inspect inputs (ls; then wc -l and a few head lines per file); never print whole data tables into chat. Then immediately write and RUN a first end-to-end version of the solution so every output file holds computed values while most of the turn budget still remains, and spend the rest refining with small str_replace edits and re-runs.

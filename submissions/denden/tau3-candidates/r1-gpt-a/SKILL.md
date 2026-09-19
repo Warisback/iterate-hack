@@ -1,6 +1,6 @@
 ---
-name: banking-service-discipline
-description: Tool, verification and termination discipline for serving a banking customer.
+name: rho-bank-knowledge-tooling-termination
+description: Prevents common banking_knowledge eval failures: wrong write-tool action, missing tool usage for application, and missing proper stop/termination steps.
 ---
 
 R1: Treat any user statement like “I applied / I went ahead and applied” as unverified until a DB write-tool confirms it; if the task requires submitting an application, you must call the appropriate write tool yourself.

@@ -60,6 +60,8 @@ def main() -> None:
     ap.add_argument("--arm", default="skill", help="arm whose failures to learn from")
     ap.add_argument("--skill", default=None, help="current skill folder (default team folder)")
     ap.add_argument("--model", default=None)
+    ap.add_argument("--key-env", default="OPENAI_API_KEY",
+                    help="which .env variable holds the key (e.g. OPENAI_API_KEY_2 for the second account)")
     ap.add_argument("--cap", type=float, default=0.40, help="max USD for this proposal call")
     ap.add_argument("--max-fails", type=int, default=6, help="trajectories to include")
     args = ap.parse_args()
@@ -88,7 +90,7 @@ def main() -> None:
                         + assemble(row, args.domain, run_dir, 20))
     user_msg = "\n\n".join(sections)
 
-    key = load_env_key("OPENAI_API_KEY")
+    key = load_env_key(args.key_env)
     model = pick_model(key, args.model)
     pin, pout = price_for(model)
     worst = (len(user_msg) / 3.5) / 1e6 * pin + 8000 / 1e6 * pout

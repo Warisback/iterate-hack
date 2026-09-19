@@ -1,26 +1,15 @@
 ---
-name: qfbench-reliability-and-conventions
-description: Prevents zero-output crashes, oversized tool calls, invented pricing formulas, off-by-one conventions, and exact-format CSV mismatches in QuantitativeFinance-Bench sandbox tasks graded by hidden file tests.
+name: qf-bench-output-integrity
+description: Prevents common quantitative-finance bench failures: schedule/parameter mismatches, off-by-one calibration counts, and missing final response.
 ---
-
-R1: Create every required output file at its exact path early — write rough/placeholder values as soon as they are computable, then refine. A run that dies late must still leave all files on disk; zero files means every test errors.
-
-R2: Keep every tool call small. Create a file with a short skeleton first, then extend with str_replace edits of at most ~80 lines each; never emit a whole script in one giant call (oversized calls get truncated and fail tool validation). A file-editor create needs BOTH `path` and `file_text` in the same call; a think call needs a single short `thought` string.
-
-R3: Never delete a partial solution file until its replacement already exists on disk.
-
-R4: For standard derivative pricing — Black-Scholes, discrete geometric-Asian exact, Levy/two-moment, Curran geometric-conditioning — copy `formulas.py` from this skill folder into the workspace and import it. Do not re-derive these formulas from memory in prose.
-
-R5: Before writing any pricing/metrics output, run sanity checks on every row (use `validate_asian_row` in formulas.py for Asian tasks): all option prices > 0, geometric <= arithmetic call, each approximation within a few standard errors of its own Monte Carlo estimate, and every bound the instruction states. If a check fails, fix the code before writing files — never ship a table you can see is broken.
-
-R6: Count conventions: "number of prices/observations" means rows of the raw series; a return series has exactly one fewer element. Recount from the input file, not from a derived array.
-
-R7: Apply exactly one day of signal lag, in exactly one place: a signal used on day t is built from data through day t-1. If the signal array is already constructed with that lag, index it with [t] at trade time — indexing [t-1] double-lags and guts the strategy's return.
-
-R8: A trade/signal start-day parameter marks the FIRST event, not a waiting period: the first rebalance happens on trade_start_day itself, later rebalances at each subsequent period boundary, and metric windows begin there. Every provided parameter must visibly affect the result. If an integer checkpoint (e.g. a rebalance count) matches under one reading of an ambiguous rule, keep that reading — do not "fix" it away.
-
-R9: When an output column is first_X_id / last_X_id over a set of rows, write the same primary identifier column of the first row and of the last row; never switch to different same-named fields inside the input record (e.g. use the first/last eligible trade's own trade id, not its constituent first_trade_id/last_trade_id fields).
-
-R10: Exact-match file tests compare strings. Follow the stated float format literally (e.g. fixed 6 decimals on every float field), write empty strings exactly where told, keep the stated column and row order, and normalize tiny residuals with `round(x, 6) + 0.0` before formatting so "-0.000000" can never appear. Before finishing, re-read the output spec bullet-by-bullet against the actual written file.
-
-R11: Grading reads only the output files. A final chat message, answer marker, or summary formatting changes nothing — never restructure or truncate file-writing work to satisfy message-format instructions.
+R1: Always write a non-empty final assistant message after creating outputs; if the task is file-based, the final message must at least state which files were written.
+R2: Do not invent strategy mechanics; implement exactly what params.json specifies (rebalance frequency, start days, leverage/caps, per-stock weights, cost units).
+R3: For “monthly” rebalancing, define rebalance days as the first available trading date of each calendar month within the dataset, then filter by trade_start_day index; do not shift by an extra day.
+R4: Compute signals using only information available at decision time; if trades occur on day t, signals must be computed from data up to t-1 unless explicitly stated otherwise.
+R5: Do not fill missing returns with 0.0 unless explicitly instructed; default cleaning is forward-fill within each column then remaining NaNs to 0 only if still present, and report nan_count from raw matrix before filling.
+R6: Use sample statistics where specified: any reported/used standard deviation must be ddof=1; Sharpe uses mean/std of daily strategy returns then annualize by sqrt(annualization_factor).
+R7: Max drawdown must be computed from the strategy equity curve (cumprod(1+r)), and reported as a positive magnitude (peak-to-trough / peak).
+R8: Factor regression must be OLS with an intercept on the specified factor_names and aligned by date; annualized_alpha = intercept * annualization_factor; tracking_error_annual = std(residuals, ddof=1)*sqrt(annualization_factor).
+R9: For GBM calibration, set n_prices to the number of close prices in the CSV (not the number of returns); returns count is n_prices-1.
+R10: Monte Carlo pricing must use exactly the required path count and discrete monitoring count; ensure all reported prices (geo_exact, levy_arith, curran_arith, mc_arith, mc_geo) are strictly positive by using max(payoff,0) and discounting once by exp(-rT).
+R11: If the agent encounters an API/LLM transport error mid-run, rerun locally from the last saved script/output state; do not exit without producing the required output files and final message.

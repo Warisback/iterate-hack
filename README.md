@@ -1,5 +1,14 @@
 # Skill-writing hackathon
 
+> **Team denden's entry.** This fork contains our skills, candidate frontier,
+> changelogs and full experiment log for the Aptura Self-Improving AI Hack.
+> Headline: **+0.101 net holdout gain on HealthBench** (skill 0.500 vs placebo
+> 0.399), measured once on tasks never tuned on. Read the write-up in
+> [`submissions/denden/README.md`](submissions/denden/README.md); the run-by-run
+> record is in [`runs/LOG.md`](runs/LOG.md) and the frozen dev/holdout split in
+> [`runs/SPLITS.md`](runs/SPLITS.md). The original hackathon instructions follow
+> below.
+
 You are the curator. Write a **skill** (a folder with a `SKILL.md` plus any
 supporting files) that makes a fixed **learner** model better at a domain. The
 learner never changes; only your skill does. Your skill is scored on held-out

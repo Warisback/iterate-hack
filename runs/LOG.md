@@ -23,7 +23,7 @@ domain **health** (healthbench) · learner `zai-glm-5-3-flash` · n_tasks 1 · n
 | healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 | 0.04 |
 
 Failed or non-ok attempts (read these trajectories):
-- `baseline` · healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 · score 0.04 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\smoke\harbor-jobs\healthbench-train-healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8-b5dc96c7\task__f7uiMWH
+- `baseline` · healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 · score 0.04 · status ok · runs/smoke/harbor-jobs/healthbench-train-healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8-b5dc96c7/task__f7uiMWH
 
 
 ## 2026-09-19 ~14:10 budget notes
@@ -54,22 +54,22 @@ domain **health** (healthbench) · learner `zai-glm-5-3-flash` · n_tasks 8 · n
 | healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d | 0.45 | 0.32 |
 
 Failed or non-ok attempts (read these trajectories):
-- `baseline` · healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 · score 0.16 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8-fe3cbc95\task__RtoM6xK
-- `baseline` · healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e · score 0.49 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e-5f4b6b7d\task__fGgt9yC
-- `baseline` · healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020 · score 0.03 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020-077f5bb7\task__5sUeQcX
-- `baseline` · healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e · score 0.00 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e-8dea98a8\task__6vUosjH
-- `baseline` · healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4 · score 0.30 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4-9949b699\task__rAba2g5
-- `baseline` · healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d · score 0.30 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d-80be100c\task__brrvgSY
-- `baseline` · healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c · score 0.47 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c-4c15ccfd\task__FrPVKAT
-- `baseline` · healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d · score 0.45 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d-7ec125dd\task__VWohgdz
-- `placebo` · healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 · score 0.25 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8-36aea027\task__9gemDQr
-- `placebo` · healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e · score 0.40 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e-4468abc0\task__rafidDD
-- `placebo` · healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020 · score 0.79 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020-e07c6a1b\task__vGzJvBf
-- `placebo` · healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e · score 0.00 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e-4fc4e5b2\task__MKg5VG4
-- `placebo` · healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4 · score 0.10 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4-804c8e2a\task__3VUDf6T
-- `placebo` · healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d · score 0.20 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d-1c276819\task__7nYpxAK
-- `placebo` · healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c · score 0.58 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c-27b04eeb\task__6dp6Z2S
-- `placebo` · healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d · score 0.32 · status ok · C:\Users\yussu\OneDrive\Documents\comp sci projects\iterate hack\runs\health-v0\harbor-jobs\healthbench-train-healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d-4aaa94f0\task__sQW3bh9
+- `baseline` · healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 · score 0.16 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8-fe3cbc95/task__RtoM6xK
+- `baseline` · healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e · score 0.49 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e-5f4b6b7d/task__fGgt9yC
+- `baseline` · healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020 · score 0.03 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020-077f5bb7/task__5sUeQcX
+- `baseline` · healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e · score 0.00 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e-8dea98a8/task__6vUosjH
+- `baseline` · healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4 · score 0.30 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4-9949b699/task__rAba2g5
+- `baseline` · healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d · score 0.30 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d-80be100c/task__brrvgSY
+- `baseline` · healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c · score 0.47 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c-4c15ccfd/task__FrPVKAT
+- `baseline` · healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d · score 0.45 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d-7ec125dd/task__VWohgdz
+- `placebo` · healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8 · score 0.25 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-00656524-cc51-47a3-bfb5-85e7096ee1c8-36aea027/task__9gemDQr
+- `placebo` · healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e · score 0.40 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-02109c83-28b1-4269-b4b2-5ceefb66524e-4468abc0/task__rafidDD
+- `placebo` · healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020 · score 0.79 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-034d78e2-0873-4e4a-9621-735b51d0d020-e07c6a1b/task__vGzJvBf
+- `placebo` · healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e · score 0.00 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-05bb23aa-3965-419a-a986-79c301d9270e-4fc4e5b2/task__MKg5VG4
+- `placebo` · healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4 · score 0.10 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-062e3a49-07e0-4b5c-a941-ceb8cc4111e4-804c8e2a/task__3VUDf6T
+- `placebo` · healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d · score 0.20 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-06902be5-32f0-4adc-ba00-e5ad2f98ea2d-1c276819/task__7nYpxAK
+- `placebo` · healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c · score 0.58 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-08fdc56d-a23c-4b03-bfab-0e91a089c45c-27b04eeb/task__6dp6Z2S
+- `placebo` · healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d · score 0.32 · status ok · runs/health-v0/harbor-jobs/healthbench-train-healthbench-hard-09583fec-46bd-4a79-a524-94261baa875d-4aaa94f0/task__sQW3bh9
 
 
 ## 2026-09-19 15:50 health round 1 — first result

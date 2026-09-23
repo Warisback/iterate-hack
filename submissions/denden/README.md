@@ -1,7 +1,7 @@
 # Team denden — Aptura Self-Improving AI Hack
 
-Two humans + Claude Code as the curator, writing skills to improve a frozen learner
-(GLM 5.3 Flash in the OpenHands harness) on four domains. Only the skill changes;
+A two-person team writing skills to improve a frozen learner (GLM 5.3 Flash in
+the OpenHands harness) on four domains. Only the skill changes;
 score = pass rate with our skill minus pass rate with a placebo skill, on private
 held-out tasks.
 
